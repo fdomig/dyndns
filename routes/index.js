@@ -1,3 +1,5 @@
+"use strict";
+
 var
   dyndns = require('../lib/dyndns'),
   timer  = require('../lib/time');
@@ -13,9 +15,10 @@ var
 exports.index = function(req, res) {
   dyndns.my_ip(function(err, ip) {
     if (err) throw err;
+    var uptime;
 
     if (last_ip && last_ip != ip) {
-      last_change = new Date()
+      last_change = new Date();
       last_ip = ip;
       uptime = 0;
     } else {
