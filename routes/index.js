@@ -26,7 +26,7 @@ exports.index = function(req, res) {
     }
 
     res.render('index', {
-      title: 'dynDNS',
+      title: 'My IP',
       my_ip: ip,
       uptime: uptime
     });
